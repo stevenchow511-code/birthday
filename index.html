@@ -140,8 +140,38 @@ img.show{
   <div class="gift" id="gift" onclick="openGift()">🎁</div>
   <div class="secret-message" id="secretMessage">
     Kado nya klik disini ya , hehe 💖✨  
-  </div>
+    br><br>
+  <!-- Button WA -->
+  <button onclick="openWhatsApp()" style="
+      background:#25D366; 
+      color:white; 
+      border:none; 
+      padding:10px 20px; 
+      border-radius:30px; 
+      cursor:pointer;
+      font-weight:600;
+      margin-top:10px;
+      transition:0.3s;">
+      Chat Me di WA
+  </button>
+</div>
 
+<script>
+function openGift(){
+  document.getElementById("gift").classList.add("open");
+  document.getElementById("secretMessage").classList.add("show");
+}
+
+// Fungsi untuk WA
+function openWhatsApp(){
+  // Ganti nomor WA di sini pakai format internasional tanpa tanda + atau 0
+  let waNumber = "6281234567890"; // contoh: 62812xxxxxxx
+  let message = "Hai! 🎉 Terima kasih atas kadonya 😄";
+  let url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+</script>
+  </div>
 </div>
 
 <audio id="music" loop>
@@ -188,4 +218,5 @@ function generateHearts(){
 
 </body>
 </html>
+
 

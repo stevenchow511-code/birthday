@@ -49,11 +49,6 @@ body{
   font-weight:600;
   cursor:pointer;
   font-size:16px;
-  transition:0.4s;
-}
-
-.start-btn:hover{
-  transform:scale(1.1);
 }
 
 /* Main Content */
@@ -90,6 +85,29 @@ img.show{
   font-size:14px;
   line-height:1.6;
   min-height:60px;
+  margin-bottom:20px;
+}
+
+/* Gift */
+.gift{
+  font-size:50px;
+  cursor:pointer;
+  transition:0.5s;
+}
+
+.gift.open{
+  transform:rotate(15deg) scale(1.2);
+}
+
+.secret-message{
+  margin-top:15px;
+  font-size:14px;
+  opacity:0;
+  transition:1s;
+}
+
+.secret-message.show{
+  opacity:1;
 }
 
 /* Floating Hearts */
@@ -117,6 +135,14 @@ img.show{
   <h1>Happy Birthday 💕</h1>
   <img id="photo" src="https://i.ibb.co/2YQZ1Yp/girl-birthday.jpg">
   <div class="typing" id="typingText"></div>
+
+  <!-- Gift Box -->
+  <div class="gift" id="gift" onclick="openGift()">🎁</div>
+  <div class="secret-message" id="secretMessage">
+    Kamu adalah hadiah terindah dalam hidupku 💖✨  
+    Terima kasih sudah hadir dan membuat semuanya lebih indah.
+  </div>
+
 </div>
 
 <audio id="music" loop>
@@ -124,7 +150,7 @@ img.show{
 </audio>
 
 <script>
-const text = "Untuk kamu yang paling spesial hari ini 💖 Semoga semua impianmu tercapai, hidupmu selalu dipenuhi kebahagiaan, dan senyummu tak pernah pudar ✨ Kamu sangat berarti 💕";
+const text = "Untuk kamu yang paling spesial hari ini 💖 Semoga semua impianmu tercapai dan hidupmu selalu dipenuhi kebahagiaan ✨";
 
 let i = 0;
 
@@ -144,8 +170,13 @@ function typeWriter(){
   }
 }
 
+function openGift(){
+  document.getElementById("gift").classList.add("open");
+  document.getElementById("secretMessage").classList.add("show");
+}
+
 function generateHearts(){
-  for(let i=0;i<30;i++){
+  for(let i=0;i<25;i++){
     let heart=document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML="💖";

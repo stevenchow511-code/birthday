@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+}
+
+.container{
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(15px);
+  padding:40px 25px;
+  border-radius:25px;
+  width:90%;
+  max-width:400px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  animation:fadeIn 2s ease;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#ff4e88;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:15px;
+  color:#444;
+}
+
+p{
+  font-size:14px;
+  color:#666;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+button{
+  background:#ff4e88;
+  color:white;
+  border:none;
+  padding:12px 22px;
+  border-radius:50px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff2e70;
+  transform:scale(1.05);
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Floating hearts */
+.heart{
+  position:absolute;
+  color:#ff4e88;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Happy Birthday 💖</h1>
+  <h2>Untuk: Nama Cantik Kamu</h2>
+  <p>
+    Semoga hari ini penuh kebahagiaan,  
+    senyum indahmu semakin bersinar,  
+    dan semua impianmu tercapai ✨  
+    Kamu spesial banget hari ini 🎂
+  </p>
+  <button onclick="playMusic()">Putar Musik 🎵</button>
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+
+/* Generate floating hearts */
+for(let i=0;i<20;i++){
+  let heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*5+5)+"s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>

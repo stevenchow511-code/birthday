@@ -137,10 +137,10 @@ img.show{
   <div class="typing" id="typingText"></div>
 
   <!-- Gift Box -->
-  <div class="gift" id="gift" onclick="openGift()">🎁</div>
-  <div class="secret-message" id="secretMessage">
-    Kado nya klik disini ya , hehe 💖✨  
-    <br>
+<div class="gift" id="gift" onclick="openGift()">🎁</div>
+<div class="secret-message" id="secretMessage">
+  Kado nya klik disini ya , hehe 💖✨
+  <br><br>
   <!-- Button WA -->
   <button onclick="openWhatsApp()" style="
       background:#25D366; 
@@ -164,9 +164,9 @@ function openGift(){
 
 // Fungsi untuk WA
 function openWhatsApp(){
-  // Ganti nomor WA di sini pakai format internasional tanpa tanda + atau 0
+  // Ganti nomor WA di sini pakai format internasional
   let waNumber = "6281234567890"; // contoh: 62812xxxxxxx
-  let message = "Hai! 🎉 Terima kasih atas kadonya 😄";
+  let message = "Kado 🎁💖"; // Tulisan default di WA
   let url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 }
@@ -218,6 +218,7 @@ function generateHearts(){
 
 </body>
 </html>
+
 
 
 

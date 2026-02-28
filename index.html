@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday 💖</title>
+<title>For Someone Special 💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,117 +16,132 @@
 
 body{
   height:100vh;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
   display:flex;
   justify-content:center;
   align-items:center;
-  background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
-  font-family:'Poppins',sans-serif;
-  overflow:hidden;
+  text-align:center;
+  color:white;
 }
 
-.container{
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(15px);
+/* Overlay blur glass */
+.overlay{
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
   padding:40px 25px;
-  border-radius:25px;
+  border-radius:30px;
   width:90%;
-  max-width:400px;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,0.2);
-  animation:fadeIn 2s ease;
+  max-width:420px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.3);
+  transition:1s ease;
 }
 
 h1{
   font-family:'Playfair Display',serif;
-  font-size:28px;
-  color:#ff4e88;
-  margin-bottom:10px;
+  font-size:30px;
+  margin-bottom:15px;
 }
 
-h2{
-  font-size:20px;
+button{
+  background:white;
+  color:#ff4e88;
+  border:none;
+  padding:12px 25px;
+  border-radius:50px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+button:hover{
+  transform:scale(1.08);
+}
+
+/* Surprise section */
+.content{
+  opacity:0;
+  transform:translateY(20px);
+  transition:1.5s ease;
+  margin-top:20px;
+}
+
+.content.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.content img{
+  width:100%;
+  border-radius:25px;
   margin-bottom:15px;
-  color:#444;
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 
 p{
   font-size:14px;
-  color:#666;
-  margin-bottom:25px;
   line-height:1.6;
-}
-
-button{
-  background:#ff4e88;
-  color:white;
-  border:none;
-  padding:12px 22px;
-  border-radius:50px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  background:#ff2e70;
-  transform:scale(1.05);
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
 }
 
 /* Floating hearts */
 .heart{
   position:absolute;
-  color:#ff4e88;
+  bottom:-20px;
   font-size:20px;
   animation:float 6s linear infinite;
+  opacity:0.7;
 }
 
 @keyframes float{
-  from{transform:translateY(100vh);}
-  to{transform:translateY(-10vh);}
+  from{
+    transform:translateY(0) rotate(0deg);
+  }
+  to{
+    transform:translateY(-110vh) rotate(360deg);
+  }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="overlay">
   <h1>Happy Birthday 💖</h1>
-  <h2>DIAN MARTIANA</h2>
-  <p>
-    Semoga hari ini penuh kebahagiaan,  
-    senyum indahmu semakin bersinar,  
-    dan semua impianmu tercapai ✨  
-    Kamu spesial banget hari ini 🎂
-  </p>
-  <button onclick="playMusic()">Putar Musik 🎵 & Ambil Hadiah </button>
+  <button onclick="startSurprise()">Open Your Surprise ✨</button>
+
+  <div class="content" id="content">
+    <img src="https://i.ibb.co/2YQZ1Yp/girl-birthday.jpg">
+    <p>
+      Untuk kamu yang paling spesial hari ini 💕  
+      Semoga hidupmu selalu dipenuhi tawa,  
+      cinta, dan kebahagiaan tanpa batas 🎂✨  
+      Stay beautiful, inside and out 💖
+    </p>
+  </div>
 </div>
 
-<!-- Music -->
-<audio id="bgMusic" loop>
+<audio id="music" loop>
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function playMusic(){
-  document.getElementById("bgMusic").play();
+function startSurprise(){
+  document.getElementById("music").play();
+  document.getElementById("content").classList.add("show");
+  generateHearts();
 }
 
-/* Generate floating hearts */
-for(let i=0;i<20;i++){
-  let heart=document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML="💖";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.animationDuration=(Math.random()*5+5)+"s";
-  document.body.appendChild(heart);
+function generateHearts(){
+  for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*5+4)+"s";
+    document.body.appendChild(heart);
+  }
 }
 </script>
 
 </body>
-
 </html>
-

@@ -238,8 +238,8 @@ function createLoveRain(){
     let love=document.createElement("div");
     love.classList.add("love");
     love.innerHTML="💖";
-    love.style.left=Math.random()*100+"vw";
-    love.style.animationDuration=(Math.random()*1+2)+"s";
+    love.style.left=Math.random()*50+"vw";
+    love.style.animationDuration=(Math.random()*1+1)+"s";
     document.body.appendChild(love);
     setTimeout(()=>love.remove(),5000);
   },300);
@@ -248,5 +248,6 @@ function createLoveRain(){
 
 </body>
 </html>
+
 
 

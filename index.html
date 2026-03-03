@@ -167,13 +167,11 @@ h1{
 
 <body>
 
-<!-- Envelope Screen -->
 <div class="envelope-screen" id="envelopeScreen">
   <div class="envelope" onclick="openLetter()">💌</div>
   <p>Tap amplopnya ya dut 💖</p>
 </div>
 
-<!-- Main Content -->
 <div class="container" id="mainContent">
   <h1>Happy Birthday Dut 💕</h1>
 
@@ -194,23 +192,13 @@ h1{
   </div>
 </div>
 
-<!-- Musik -->
-<audio id="music" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu memelukmu ya dut, salut sama kamu 💕";
+const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu memelukmu ya dut, salut sama kamu , you deserve to be happy dut 💕";
 let i=0;
 
 function openLetter(){
   document.getElementById("envelopeScreen").style.display="none";
   document.getElementById("mainContent").style.display="block";
-
-  let music = document.getElementById("music");
-  music.volume = 0.5;
-  music.play().catch(()=>{});
-
   typeWriter();
   startSlideshow();
   createLoveRain();
@@ -230,7 +218,7 @@ function openGift(){
 }
 
 function openWhatsApp(){
-  let wa="6281234567890"; // ganti dengan nomor WA kamu
+  let wa="6281234567890"; 
   let message="Aku mau kadonya sekarang 😘🎁💖";
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent(message)}`,"_blank");
 }

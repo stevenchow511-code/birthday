@@ -9,33 +9,6 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-  .typing{
-  font-size:14px;
-  min-height:80px;
-  margin-bottom:15px;
-  color:#fff;
-  text-shadow:
-    0 0 5px #ff4da6,
-    0 0 10px #ff4da6,
-    0 0 20px #ff1a75,
-    0 0 40px #ff1a75,
-    0 0 80px #ff0066;
-  animation: neonGlow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neonGlow{
-  from{
-    text-shadow:
-      0 0 5px #ff4da6,
-      0 0 10px #ff4da6,
-      0 0 20px #ff1a75;
-  }
-  to{
-    text-shadow:
-      0 0 20px #ff1a75,
-      0 0 40px #ff0066,
-      0 0 60px #ff0066;
-  }
 
 body{
   min-height:100vh;
@@ -114,10 +87,39 @@ h1{
   display:block;
 }
 
+/* 🔥 NEON TYPING TEXT */
 .typing{
-  font-size:14px;
+  font-size:16px;
   min-height:80px;
   margin-bottom:15px;
+  font-weight:600;
+  letter-spacing:1px;
+  color:#fff;
+
+  text-shadow:
+    0 0 5px #ff6ec7,
+    0 0 10px #ff6ec7,
+    0 0 20px #ff1493,
+    0 0 40px #ff1493;
+
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse{
+  from{
+    text-shadow:
+      0 0 5px #ff6ec7,
+      0 0 10px #ff6ec7,
+      0 0 20px #ff1493,
+      0 0 30px #ff1493;
+  }
+  to{
+    text-shadow:
+      0 0 10px #ff9ae6,
+      0 0 20px #ff4db8,
+      0 0 40px #ff1493,
+      0 0 60px #ff1493;
+  }
 }
 
 .gift{
@@ -159,12 +161,11 @@ h1{
 }
 
 @keyframes fall{
-  to{
-    transform:translateY(110vh);
-  }
+  to{ transform:translateY(110vh); }
 }
 </style>
 </head>
+
 <body>
 
 <div class="envelope-screen" id="envelopeScreen">
@@ -173,7 +174,7 @@ h1{
 </div>
 
 <div class="container" id="mainContent">
-  <h1 id="nameTitle">Happy Birthday Dut 💕</h1>
+  <h1>Happy Birthday Dut 💕</h1>
 
   <div class="slideshow">
     <img src="https://i.ibb.co/9HCSsyCD/image.png" class="active">
@@ -192,18 +193,13 @@ h1{
   </div>
 </div>
 
-<audio id="music" loop>
-  <source src="romantic_music.wav" type="audio/wav">
-</audio>
-
 <script>
-const text = "Hari ini bukan cuma hari lahirmu…Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕Semoga cinta, tawa, dan kebahagiaan selalu memelukmu ya dut , salut sama kamu 💕";
+const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu memelukmu ya dut, salut sama kamu 💕";
 let i=0;
 
 function openLetter(){
   document.getElementById("envelopeScreen").style.display="none";
   document.getElementById("mainContent").style.display="block";
-  document.getElementById("music").play().catch(()=>{});
   typeWriter();
   startSlideshow();
   createLoveRain();
@@ -220,7 +216,6 @@ function typeWriter(){
 function openGift(){
   document.querySelector(".gift").classList.add("open");
   document.getElementById("secretMessage").classList.add("show");
-  confettiEffect();
 }
 
 function openWhatsApp(){
@@ -250,26 +245,7 @@ function createLoveRain(){
     setTimeout(()=>love.remove(),5000);
   },300);
 }
-
-function confettiEffect(){
-  for(let i=0;i<30;i++){
-    let conf=document.createElement("div");
-    conf.classList.add("love");
-    conf.innerHTML="🎉";
-    conf.style.left=Math.random()*100+"vw";
-    conf.style.animationDuration="3s";
-    document.body.appendChild(conf);
-    setTimeout(()=>conf.remove(),3000);
-  }
-}
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-

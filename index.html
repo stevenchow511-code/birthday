@@ -15,7 +15,7 @@ body{
   font-family:'Poppins',sans-serif;
   background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#ffdde1);
   background-size:400% 400%;
-  animation:bgMove 10s ease infinite;
+  animation:bgMove 12s ease infinite;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -45,11 +45,11 @@ body{
 .envelope{
   font-size:70px;
   cursor:pointer;
-  transition:0.5s;
+  transition:0.4s;
 }
 
 .envelope:hover{
-  transform:scale(1.2) rotate(8deg);
+  transform:scale(1.15) rotate(6deg);
 }
 
 /* Main Card */
@@ -60,7 +60,7 @@ body{
   border-radius:30px;
   width:90%;
   max-width:420px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.3);
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
   display:none;
 }
 
@@ -68,12 +68,12 @@ h1{
   font-family:'Playfair Display',serif;
   font-size:28px;
   margin-bottom:10px;
-  animation:glow 2s infinite alternate;
+  animation:titleGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes glow{
-  from{text-shadow:0 0 10px #fff;}
-  to{text-shadow:0 0 20px #ff4e88;}
+@keyframes titleGlow{
+  from{ text-shadow:0 0 8px rgba(255,255,255,0.6); }
+  to{ text-shadow:0 0 18px rgba(255,78,136,0.7); }
 }
 
 .slideshow img{
@@ -87,59 +87,43 @@ h1{
   display:block;
 }
 
-/* 🔥 NEON TYPING TEXT */
+/* ✨ Elegant Animated Neon Text */
 .typing{
   font-size:16px;
   min-height:80px;
   margin-bottom:15px;
   font-weight:500;
   letter-spacing:0.5px;
-  color:#fff;
+  color:#ffffff;
 
   text-shadow:
-    0 0 3px rgba(255,182,193,0.6),
-    0 0 8px rgba(255,105,180,0.4);
+    0 0 4px rgba(255,182,193,0.6),
+    0 0 10px rgba(255,105,180,0.4);
 
-  animation: softGlow 3s ease-in-out infinite alternate;
+  animation:elegantGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes softGlow{
-  from{
+@keyframes elegantGlow{
+  0%{
     text-shadow:
-      0 0 3px rgba(255,182,193,0.5),
+      0 0 3px rgba(255,182,193,0.4),
       0 0 6px rgba(255,105,180,0.3);
   }
-  to{
+  100%{
     text-shadow:
-      0 0 6px rgba(255,182,193,0.7),
-      0 0 12px rgba(255,105,180,0.5);
-  }
-
-@keyframes neonPulse{
-  from{
-    text-shadow:
-      0 0 5px #ff6ec7,
-      0 0 10px #ff6ec7,
-      0 0 20px #ff1493,
-      0 0 30px #ff1493;
-  }
-  to{
-    text-shadow:
-      0 0 10px #ff9ae6,
-      0 0 20px #ff4db8,
-      0 0 40px #ff1493,
-      0 0 60px #ff1493;
+      0 0 6px rgba(255,182,193,0.8),
+      0 0 14px rgba(255,105,180,0.6);
   }
 }
 
 .gift{
   font-size:50px;
   cursor:pointer;
-  transition:0.5s;
+  transition:0.4s;
 }
 
 .gift.open{
-  transform:scale(1.3) rotate(15deg);
+  transform:scale(1.25) rotate(10deg);
 }
 
 .secret-message{
@@ -160,6 +144,11 @@ h1{
   font-weight:600;
   cursor:pointer;
   margin-top:10px;
+  transition:0.3s;
+}
+
+.wa-btn:hover{
+  transform:scale(1.05);
 }
 
 /* Falling Hearts */
@@ -200,12 +189,11 @@ h1{
     dih di klik ya dut , kado nya gatau nih apa langsung chat aja deh tuh wkwk 😘💖
     <br>
     <button class="wa-btn" onclick="openWhatsApp()">Chat Aku 💕</button>
-    
   </div>
 </div>
 
 <script>
-const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu besertamu ya dut, salut sama kamu ,you deserve to be happy dut 💕";
+const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu memelukmu ya dut, salut sama kamu 💕";
 let i=0;
 
 function openLetter(){
@@ -230,7 +218,7 @@ function openGift(){
 }
 
 function openWhatsApp(){
-  let wa="6281378715408";
+  let wa="6281234567890"; 
   let message="Aku mau kadonya sekarang 😘🎁💖";
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent(message)}`,"_blank");
 }
@@ -260,6 +248,3 @@ function createLoveRain(){
 
 </body>
 </html>
-
-
-

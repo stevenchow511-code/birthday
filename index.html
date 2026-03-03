@@ -9,6 +9,33 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+  .typing{
+  font-size:14px;
+  min-height:80px;
+  margin-bottom:15px;
+  color:#fff;
+  text-shadow:
+    0 0 5px #ff4da6,
+    0 0 10px #ff4da6,
+    0 0 20px #ff1a75,
+    0 0 40px #ff1a75,
+    0 0 80px #ff0066;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow{
+  from{
+    text-shadow:
+      0 0 5px #ff4da6,
+      0 0 10px #ff4da6,
+      0 0 20px #ff1a75;
+  }
+  to{
+    text-shadow:
+      0 0 20px #ff1a75,
+      0 0 40px #ff0066,
+      0 0 60px #ff0066;
+  }
 
 body{
   min-height:100vh;
@@ -239,6 +266,7 @@ function confettiEffect(){
 
 </body>
 </html>
+
 
 
 

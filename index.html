@@ -83,7 +83,7 @@ h1{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:10px;animat
 </audio>
 
 <script>
-const text = "Hari ini bukan cuma hari lahirmu… Tapi hari di mana dunia diberkahi dengan seseorang yang begitu spesial 💕 Semoga cinta, tawa, dan kebahagiaan selalu bersertamu ya dut, salut sama kamu you deserve to be happy dut 💕";
+const text = "Harus jadi pribadi yang selalu berusaha lebih baik ya dut , jangan pernah ngerasa gaada yang sayang kamu , semoga janji kamu tepati ya";
 let i=0;
 
 function openLetter(){
@@ -127,22 +127,11 @@ function startSlideshow(){
     slides[index].classList.add("active");
   },3000);
 }
-
-function createLoveRain(){
-  setInterval(()=>{
-    let love=document.createElement("div");
-    love.classList.add("love");
-    love.innerHTML="💖";
-    love.style.left=Math.random()*100+"vw";
-    love.style.animationDuration=(Math.random()*1+2)+"s";
-    document.body.appendChild(love);
-    setTimeout(()=>love.remove(),5000);
-  },300);
-}
 </script>
 
 </body>
 </html>
+
 
 
 
